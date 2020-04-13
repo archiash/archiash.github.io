@@ -1,7 +1,7 @@
 ---
 layout: page
 title: "Primo Magazine"
-permalink: /magazine/
+permalink: /_posts/
 ---
 
 # Primo Magazine
