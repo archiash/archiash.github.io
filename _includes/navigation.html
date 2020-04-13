@@ -1,5 +1,5 @@
 <nav>
-  <body style = "color: white">|</body>
+  <span style = "color: white">|</span>
   {% for item in site.data.navigation %}
     <a href="{{ item.link }}"
       {% if page.url == item.link %}
@@ -10,6 +10,6 @@
       
        {{ item.name }} 
     </a>
-  <body style = "color: white">|</body>
+  <span style = "color: white">|</span>
   {% endfor %}
 </nav>
