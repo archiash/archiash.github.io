@@ -1,6 +1,6 @@
 # Primo Magazine
 
-[Link to a page]({% link news/magazine.md %}) 
+[Magazine]({% link news/magazine.md %}) 
 
 
 [Vol-1]({% post_url 2020-04-13-Primo-Magazine-Vol-1 %})
