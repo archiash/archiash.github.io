@@ -1,5 +1,5 @@
 <nav>
-  <span style = "color: ​​white;">|</span>
+  <span style = "color: ​​#ece4d8; font-weight: bold;">|</span>
   {% for item in site.data.navigation %}
     <a href="{{ item.link }}"
       {% if page.url == item.link %}
@@ -7,8 +7,8 @@
        {% elsif page.url != item.link %}
        style="color: #ece4d8; font-weight: bold;"
        {% endif %}>     
-       {{ item.name }} 
+       {{ item.name }}
     </a>
-  <span style = "color: white;">|</span>
-  {% endfor %} 
+  <span style = "color: #ece4d8; font-weight: bold;">|</span>
+  {% endfor %}
 </nav>
