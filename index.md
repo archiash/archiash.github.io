@@ -3,6 +3,8 @@
 {% if page.show_sidebar %}
   <div class="sidebar">
     sidebar content
+  xxxcc
+  xxxx
   </div>
 {% endif %}
 
