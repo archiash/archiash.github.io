@@ -19,6 +19,12 @@
     </script>
 
 {% seo %}
+    <style>
+.center {
+  text-align: center;
+}
+</style>
+    
   </head>
 
   <body>
@@ -30,7 +36,9 @@
           <span class="ribbon-inner">
             <h1>{{ site.title | default: site.github.repository_name }}</h1>
             <h2>{{ site.description | default: site.github.project_tagline }}</h2>
+            <div class="center">
             <body>{% include navigation.html %}</body>
+            </div>
           </span>
           <span class="left-tail"></span>
           <span class="right-tail"></span>
