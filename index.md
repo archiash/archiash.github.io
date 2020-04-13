@@ -1,3 +1,3 @@
 # Primo Magazine
 
-{% link magazine.md %}
+{% link news/magazine.md %}
