@@ -6,3 +6,4 @@ categories: Magazine
 ---
 
 # Primo Magazine Vol.1
+**Content**
