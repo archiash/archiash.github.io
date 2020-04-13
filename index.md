@@ -1,1 +1,1 @@
-# Primo
+# Primo Magazine
