@@ -1,12 +1,14 @@
-
 Strength : <input type="number" id="attr_Strength" onchange="myFunction()"/>
 
 <input type="number" id="attr_StrMod" value="0" disabled="true" />
 
-
 <script>
-var strength = document.getElementById("attr_Strength").value;
+var strength = document.getElementById("attr_Strength");
 function myFunction(){
-document.getElementById("attr_StrMod").value = strength;
+if(strength.value < 10){
+document.getElementById("attr_StrMod").value = Math.floor((strength.value - 10)/2);
+}else{
+document.getElementById("attr_StrMod").value = Math.round((strength.value - 10)/2);
+}
 }
 </script>
