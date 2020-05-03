@@ -1,4 +1,10 @@
-Creature Name : <input type="text" id="attr_Name" style="width: 12em"><br>
+
+Creature Name : <input type="text" id="attr_Name" style="width: 12em"/><br>
+
+<p id="demo_Class"></p>
+<input type="text" id="attr_Class_new"/>
+<button onclick="addClass()">Add Class</button><br>
+
 Size : <select id="attr_Size">
   <option value="0">Tiny</option>
   <option value="1">Small</option>
@@ -22,9 +28,9 @@ Alignment : <select id="attr_Alignment">
   <option value="9">Lawful Good</option>
   <option value="10">Any</option>
 </select> <br>
-Strength : <input type="number" id="attr_Strength" value="10" onchange="myFunction()" style="width: 7em">
+Strength : <input type="number" id="attr_Strength" value="10" onchange="myFunction()" style="width: 7em"/>
 
-<input type="number" id="attr_StrMod" value="0" disabled="true" style="width: 4em">
+<input type="number" id="attr_StrMod" value="0" disabled="true" style="width: 4em"/>
 
 <script>
 var strength = document.getElementById("attr_Strength");
@@ -35,4 +41,24 @@ document.getElementById("attr_StrMod").value = Math.floor((strength.value - 10)/
 document.getElementById("attr_StrMod").value = Math.round((strength.value - 10)/2);
 }
 }
+
+var charclass = ["Sword","Dragon"];
+document.getElementById("demo_Class").innerHTML = "Class : " +  charclass;
+
+function addClass()
+{
+  charclass.push(document.getElementById("attr_Class_new").value);
+  document.getElementById("demo_Class").innerHTML = "Class : " +  charclass;
+}
+
+var classText;
+classText = "Class : ";
+attr_class.forEach(showClass);
+document.getElementById("demo_Class").innerHTML = classText;
+
+function showClass(value)
+{
+  classText += value + ", ";
+}
+  
 </script>
