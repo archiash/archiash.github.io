@@ -1,9 +1,10 @@
 
-Strength : <input type=“number” name=“atrr_Strength”/>
+Strength : <input type=“number” name=“attr_Strength”/>
 
-<input type="number" id="attr_StrMod" value="0" disabled="true" />
+<input type="number" name="attr_StrMod" value="0" disabled="true" />
 
 
 <script>
-document.getElementById("attr_StrMod").value = 2;
+var strength = document.getElementsByName(attr_Strength);
+document.getElementsByName("attr_StrMod").value = (strength-10)/2;
 </script>
