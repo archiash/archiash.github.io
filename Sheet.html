@@ -8,8 +8,20 @@ Size : <select id="attr_Size">
   <option value="5">Gargantuan</option>
 </select>
 <br>
-Type : <input type="text" id="attr_Type" style="width: 7em"><br>
-Alignment : <input type="text" id="attr_Alignment" style="width: 7em"><br>
+Type : <input type="text" id="attr_Type" style="width: 10em"><br>
+Alignment : <select id="attr_Alignment">
+  <option value="0">Unaligned</option>
+  <option value="1">Chaotic Evil</option>
+  <option value="2">Neutral Evil</option>
+  <option value="3">Lawful Evil</option>
+  <option value="4">Chaotic Neutral</option>
+  <option value="5"selected="selected">Neutral</option>
+  <option value="6">Lawful Neutral</option>
+  <option value="7">Chaotic Good</option>
+  <option value="8">Neutral Good</option>
+  <option value="9">Lawful Good</option>
+  <option value="10">Any</option>
+</select> <br>
 Strength : <input type="number" id="attr_Strength" value="10" onchange="myFunction()" style="width: 7em">
 
 <input type="number" id="attr_StrMod" value="0" disabled="true" style="width: 4em">
