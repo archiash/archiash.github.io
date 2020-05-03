@@ -5,8 +5,8 @@ Strength : <input type=“number” id=“attr_Strength” onchange="myFunction(
 
 
 <script>
-var strength = document.getElementById("attr_Strength");
+var strength = document.getElementById("attr_Strength").value;
 function myFunction(){
-document.getElementById("attr_StrMod").value = strength.value;
+document.getElementById("attr_StrMod").value = strength;
 }
 </script>
