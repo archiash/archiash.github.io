@@ -1,8 +1,9 @@
 
 Creature Name : <input type="text" id="attr_Name" style="width: 12em"/><br>
 
-<p id="demo_Class"></p>
-<input type="text" id="attr_Class_new"/>
+<p id="demo"></p>
+<input type="text" id="attr_Class_new" placeholder="Class Name" style="width: 12em"/>
+<input type="number" id="attr_Class_Level_new" style="width: 4em" placeholder="Level"/>
 <button onclick="addClass()">Add Class</button><br>
 
 Size : <select id="attr_Size">
@@ -42,23 +43,27 @@ document.getElementById("attr_StrMod").value = Math.round((strength.value - 10)/
 }
 }
 
-var charclass = ["Sword","Dragon"];
-document.getElementById("demo_Class").innerHTML = "Class : " +  charclass;
+var attr_Class = [];
+
+document.getElementById("demo").innerHTML = "Class : ";
+
+var Class = {
+name: "Fighter",
+level: 1
+};
+  
+
 
 function addClass()
 {
-  charclass.push(document.getElementById("attr_Class_new").value);
-  document.getElementById("demo_Class").innerHTML = "Class : " +  charclass;
+  var newClass = Object.create(Class);
+  attr_Class.push(newClass);
+  document.getElementById("demo").innerHTML = "Class : " + attr_Class[0].name + " " + attr_Class[0].level;
 }
 
-var classText;
-classText = "Class : ";
-attr_class.forEach(showClass);
-document.getElementById("demo_Class").innerHTML = classText;
-
-function showClass(value)
-{
-  classText += value + ", ";
+function showClass(){
+  
 }
+
   
 </script>
