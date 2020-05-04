@@ -2,9 +2,18 @@
 Creature Name : <input type="text" id="attr_Name" style="width: 12em"/><br>
 
 <p id="demo"></p>
+
+<select id="index_Class_Change"></select>
+
 <input type="text" id="attr_Class_new" placeholder="Class Name" style="width: 12em"/>
 <input type="number" id="attr_Class_Level_new" style="width: 4em" placeholder="Level"/>
+
+
+
+
 <button onclick="addClass()">Add Class</button><br>
+
+
 
 Size : <select id="attr_Size">
   <option value="0">Tiny</option>
@@ -48,22 +57,29 @@ var attr_Class = [];
 document.getElementById("demo").innerHTML = "Class : ";
 
 var Class = {
-name: "Fighter",
-level: 1
+init: function(name,level){
+  this.name = name;
+  this.level = level;
+},
+describe: function(){
+  return this.name + " " + this.level;
+}
 };
   
-
-
 function addClass()
 {
   var newClass = Object.create(Class);
+  newClass.init(document.getElementById("attr_Class_new").value,document.getElementById("attr_Class_Level_new").value);
   attr_Class.push(newClass);
-  document.getElementById("demo").innerHTML = "Class : " + attr_Class[0].name + " " + attr_Class[0].level;
+  updateClass();
 }
 
-function showClass(){
-  
+function updateClass(){
+  var classText = " ";
+  attr_Class.forEach(function (attr){
+  classText += attr.describe() + " ";
+  });
+  document.getElementById("demo").innerHTML = "Class : " + classText;
 }
-
   
 </script>
