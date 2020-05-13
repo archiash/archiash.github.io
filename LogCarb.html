@@ -1,0 +1,27 @@
+Glucose : <input type="number"></input>
+<br>
+<input type="text" id="food_name" placeholder="Food" style="width:12em"></input>
+<input type="number" id="food_carb" placeholder="Carb" style="width:4em"></input>
+<button onclick="">Add</button>
+
+<script>
+
+ var Foods = [];
+
+  var Food = {
+    init: function(food,carb){
+      this.food = food;
+      this.carb = carb;
+    }
+    describe: function(){
+      return this.food + " " + this.carb;
+    }
+  };
+  
+  function addFood()
+  {
+   var name = document.getElementById("food_name");
+   var carb = document.getElementById("food_carb");
+    
+  }
+</script>
