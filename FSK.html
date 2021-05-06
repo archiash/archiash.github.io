@@ -1,28 +1,47 @@
+<style>
+    table, th, td {
+  border: 1px solid black;
+  border-collapse: collapse;
+}
+</style>
 
-Creature Name : <input type="text" id="attr_Name" style="width: 12em"/><br>
+ป้อนคำถาม : <input type="text" id="question" style="width: 30em"/><br>
+<button onclick="search()">ค้นหา</button>
+
+<p id="tes">Test</p>
+<table id="Answer"></table>
 
 <script>
 var qa = [
-    ['ในเทพนิยายกรีก โพรมีธีอุสได้นำพาสิ่งใดมาสู่โลกของมนุษย์','ไฟ'],
-    ['ชาวไวกิงมักถูกกล่าวว่าเป็นอาชีพอาชญากรประเภทใด','โจรสลัด'],
-    ['เลือดของกุ้งมังกรเป็นสีอะไร','สีน้ำเงิน'],
-    ['Back Hawk Down หมายถึงปฏิบัติการทางทหาร....','โซมาเลีย'],
-    ['ใครคือเทพีเเห่งชัยชนะ','วิกตอเรีย'],
-    ['จังหวัดที่มีประชากรมากที่สุดในไทย','กรุงเทพมหานคร'],
-    ['ยาสลบทำจากอะไร','คลอโรฟอร์ม'],
-    ['ข้อใดต่อไปนี้เป็นสำนักข่าวของเประเทศฝรั่งเศส','Agence France-Presse'],
-    ['',''],
-]
-    function search(a)
+    { question: "ในเทพนิยายกรีก โพรมีธีอุสได้นำพาสิ่งใดมาสู่โลกของมนุษย์", answer: "ไฟ" },   
+    { question: "ชาวไวกิงมักถูกกล่าวว่าเป็นอาชีพอาชญากรประเภทใด", answer: "โจรสลัด" },
+    { question: "เลือดของกุ้งมังกรเป็นสีอะไร", answer: "สีน้ำเงิน" },
+    { question: "Back Hawk Down หมายถึงปฏิบัติการทางทหาร....", answer: "โซมาเลีย" },
+    { question: "ใครคือเทพีเเห่งชัยชนะ", answer: "วิกตอเรีย" },
+    { question: "จังหวัดที่มีประชากรมากที่สุดในไทย", answer: "กรุงเทพมหานคร" },
+    { question: "ยาสลบทำจากอะไร", answer: "คลอโรฟอร์ม" },
+    { question: "ข้อใดต่อไปนี้เป็นสำนักข่าวของเประเทศฝรั่งเศส", answer: "Agence France-Presse" },
+    { question: "", answer: "" }
+];
+
+var sameInput = [];
+
+    function search()
     {
+        var text = document.getElementById("question");
+
+        var tbl = document.getElementById('Answer')
+        var tblBody = document.createElement( "tbody" );
+
         for (i = 0; i < qa.length; i++)
         {
-            if (qa[1].contains(substring))
+            if (qa[1].contains(text))
             {
-
+                sameInput.push(qa[i]);
             }
         }
 
+        document.getElementById("tes").innerHTML = text;
 
     }
 
