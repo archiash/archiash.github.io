@@ -4,13 +4,13 @@
   border-collapse: collapse;
 }
 </style>
-
+<body>
 ป้อนคำถาม : <input type="text" id="question" style="width: 30em"/><br>
 <button onclick="search()">ค้นหา</button>
 
 <p id="tes">Test</p>
 <table id="Answer"></table>
-
+</body>
 <script>
 var qa = [
     { question: "ในเทพนิยายกรีก โพรมีธีอุสได้นำพาสิ่งใดมาสู่โลกของมนุษย์", answer: "ไฟ" },   
@@ -20,7 +20,7 @@ var qa = [
     { question: "ใครคือเทพีเเห่งชัยชนะ", answer: "วิกตอเรีย" },
     { question: "จังหวัดที่มีประชากรมากที่สุดในไทย", answer: "กรุงเทพมหานคร" },
     { question: "ยาสลบทำจากอะไร", answer: "คลอโรฟอร์ม" },
-    { question: "ข้อใดต่อไปนี้เป็นสำนักข่าวของเประเทศฝรั่งเศส", answer: "Agence France-Presse" },
+    { question: "ข้อใดต่อไปนี้เป็นสำนักข่าวของประเทศฝรั่งเศส", answer: "Agence France-Presse" },
     { question: "", answer: "" }
 ];
 
@@ -28,21 +28,46 @@ var sameInput = [];
 
     function search()
     {
-        var text = document.getElementById("question");
+        var text = document.getElementById("question").value;
+        var tbl = document.getElementById("Answer");
+        var tblBody = document.createElement("tbody");
 
-        var tbl = document.getElementById('Answer')
-        var tblBody = document.createElement( "tbody" );
+        sameInput = [];
 
         for (i = 0; i < qa.length; i++)
         {
-            if (qa[1].contains(text))
+            var condition = qa[i].question.includes(text);
+            
+            if (condition)
             {
                 sameInput.push(qa[i]);
+                document.getElementById("tes").innerHTML = sameInput.length.toString();
             }
+
+           
         }
 
-        document.getElementById("tes").innerHTML = text;
+        for( var j = 0 ; j < sameInput.length ; j++ ){
+            var row = document.createElement( "tr" );
+            for( var i = 0 ; i < 2 ; i++ ){
+                var cell = document.createElement( "td" );
+                var cellText = document.createTextNode("Null");
+                if(i === 0)
+                {
+                    cellText.nodeValue = sameInput[j].question;
+                }                
+                if(i === 1)
+                {
+                    cellText.nodeValue = sameInput[j].answer;
+                }
+                cell.appendChild( cellText );
+                row.appendChild( cell );
+            }
 
+            tblBody.appendChild( row );
+        }
+        tbl.appendChild( tblBody );
+        tbl.setAttribute( "border" , "1" );
     }
 
 </script>
