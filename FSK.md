@@ -1,6 +1,6 @@
 ---
 layout: default
-title: FSK
+title: Forsaken World Question
 ---
 
 <style>
@@ -9,10 +9,10 @@ title: FSK
   border-collapse: collapse;
 }
 </style>
+
 <body>
 ป้อนคำถาม : <input type="text" id="question" style="width: 30em"/><br>
 <button onclick="search()">ค้นหา</button>
-
 <p id="tes"></p>
 <table id="Answer"></table>
 </body>
@@ -126,7 +126,7 @@ var sameInput = [];
             if (condition)
             {
                 sameInput.push(qa[i]);
-                document.getElementById("tes").innerHTML = sameInput.length.toString();
+                document.getElementById("tes").innerHTML = "พบคำถามที่ตรง" + sameInput.length.toString() + "คำถาม";
             }
 
            
