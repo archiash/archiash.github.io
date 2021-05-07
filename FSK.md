@@ -11,7 +11,7 @@ title: Forsaken World Question
 </style>
 <h2>Forsaken World Question</h2>
 <body>
-ป้อนเฉพาะส่วนต้นของคำถาม 2-3 คำ
+ป้อนเฉพาะส่วนต้นของคำถาม 2-3 คำ<br>
 ป้อนคำถาม : <input type="text" id="question" style="width: 30em"/><br>
 <button onclick="search()">ค้นหา</button>
 <p id="tes"></p>
