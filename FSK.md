@@ -126,7 +126,7 @@ var sameInput = [];
             if (condition)
             {
                 sameInput.push(qa[i]);
-                document.getElementById("tes").innerHTML = "พบคำถามที่ตรง" + sameInput.length.toString() + "คำถาม";
+                document.getElementById("tes").innerHTML = "พบคำถามที่ตรง " + sameInput.length.toString() + " คำถาม";
             }
 
            
