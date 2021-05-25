@@ -1,5 +1,5 @@
 ---
-layout: nonehead
+layout: fsk
 title: FSK
 ---
 
