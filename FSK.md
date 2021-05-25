@@ -9,7 +9,6 @@ title: FSK
   border-collapse: collapse;
 }
 </style>
-<h2>Forsaken World Question</h2>
 <body>
 ป้อนเฉพาะส่วนต้นของคำถาม 2-3 คำ<br>
 ป้อนคำถาม : <input type="text" id="question" style="width: 30em"/><br>
