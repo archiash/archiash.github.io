@@ -5,7 +5,7 @@ title: FSK
 
 <style>
     table, th, td {
-  border: 1px solid rgb(139, 59, 59);
+  border: 1px solid rgb(0, 0, 0);
   border-collapse: collapse;
 }
 </style>
