@@ -7,5 +7,5 @@
 // Do your operations
   var endDate   = new Date();
   var seconds = (endDate.getTime() - startDate.getTime()) / 1000;
-  document.getElementById("tes").innerHTML = seconds.toString() + " วินาที";
+  document.getElementById("tes").innerHTML = seconds + " วินาที";
 </script>
