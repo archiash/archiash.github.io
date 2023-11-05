@@ -5,9 +5,9 @@
 <script>
   var startDate = new Date("2023-10-23T17:08:00Z");
   var endDate   = new Date();
-  var seconds = Math.floor((endDate.getTime() - startDate.getTime())/1000);
+  var seconds = Math.floor((endDate.getTime() - startDate.getTime())/1000) % 60;
   var minutes = Math.floor(seconds / 60) % 60;
-  var hours = Math.floor(minutes / 60) % 60;
-  var days = Math.floor(hours / 24) % 24;
-  document.getElementById("tes").innerHTML = days + ":" + hours + ":" + minutes;
+  var hours = Math.floor(minutes / 60) % 24;
+  var days = Math.floor(hours / 24);
+  document.getElementById("tes").innerHTML = days + ":" + hours + ":" + minutes + ":" + seconds;
 </script>
