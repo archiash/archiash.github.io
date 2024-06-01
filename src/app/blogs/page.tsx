@@ -10,10 +10,8 @@ export default function Pages() {
 
     const childVariant =
         { hide: { opacity: 0, y: 10, color: "#00000000" }, show: { opacity: 1, y: 0, color: "#484848", transition:{duration:0.8}}}
-
-    window.history.replaceState(null, "New Page Title", "/")
-
-    return (
+    
+        return (
         <div className="px-[20%] flex flex-col items-center h-screen overflow-hidden bg-[#F5EFE6]">
             <div className="px-10 flex flex-row  items-center w-full h-20   ">
                 <motion.div className="bg-[#5B9A8B] rounded-full z-10"
