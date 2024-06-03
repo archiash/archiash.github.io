@@ -25,7 +25,7 @@ export default function Pages() {
         { hide: { opacity: 0, y: 100, color: "#00000000" }, show: { opacity: 1, y: [50, 25, 12, 6, 3, 1], color: "#484848", transition: { duration: 0.2, type: "keyframes", opacity: { delay: 0.5, duration: 2 } } } }
 
     return (
-        <div className="bg-[#1c1d20] flex flex-col items-center h-[1000px] overflow-y-scroll overflow-x-hidden">
+        <div className="bg-[#1c1d20] flex flex-col items-center h-[3000px] overflow-y-scroll overflow-x-hidden">
             <motion.div 
             style={{y:TextY, opacity:TextOpa}}
             className="z-10 mt-10 px-[7%] flex flex-row py-2  items-end w-full h-20 border-0 border-blue-400">
