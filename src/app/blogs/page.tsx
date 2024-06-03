@@ -53,7 +53,7 @@ export default function Pages() {
                 </div>
             </motion.div>
             <motion.div style={{y:bodyY}} className="mt-4 h-[10rem] w-full flex justify-center overflow-hidden">
-                <div className="shrink-0 mt-10 bg-white h-[100vh + 700px] w-[300%] rounded-t-[50%]" />
+                <div className="shrink-0 mt-10 bg-white h-[700px] w-[300%] rounded-t-[50%]" />
             </motion.div>
             <div className="bg-white h-full w-full"></div>
 
