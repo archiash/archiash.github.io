@@ -1,22 +1,22 @@
 "use client"
-import { delay, motion,useScroll, useTransform } from "framer-motion"
+import { delay, motion, useAnimationControls, useScroll, useTransform } from "framer-motion"
 import Image from 'next/image'
-import star from "./star.png"
-import mazy from "./Logo3.png"
+import dobby from "./Dobby.png"
+import mazy from "./Mazy169.png"
 import { useRouter } from "next/navigation"
+import Header from "@/components/header/header"
 import Link from "next/link"
 import { useRef } from "react"
 export default function Pages() {
     const ref = useRef(null);
     const router = useRouter();
-    const {scrollYProgress} = useScroll({
+    const { scrollYProgress } = useScroll({
         target: ref,
         offset: ["start start", "end start"]
     });
 
     const bodyY = useTransform(scrollYProgress, [0, 1], ["0%", "20%"]); //
-    const TextY = useTransform(scrollYProgress, [0, 0.2], ["0%", "175%"]);
-    const TextOpa = useTransform(scrollYProgress, [0, 0.1, 0.15], ["100%", "80%", "0%"])
+
     const containerVariant = {
         hide: { opacity: 0 }, show: { opacity: 1, transition: { duration: 1, staggerChildren: 0.2, } }
     }
@@ -24,38 +24,91 @@ export default function Pages() {
     const childVariant =
         { hide: { opacity: 0, y: 100, color: "#00000000" }, show: { opacity: 1, y: [50, 25, 12, 6, 3, 1], color: "#484848", transition: { duration: 0.2, type: "keyframes", opacity: { delay: 0.5, duration: 2 } } } }
 
+
+    const mazyControls = useAnimationControls();   
+    const dobbyControls = useAnimationControls();
+    
+    
+
+    const pictureVariant ={
+        init:{opacity:1, y:0},
+        hide:{opacity:0, y: 80, transition:{duration:0.8, ease:[0.5, 0, 0.24, 1]}},
+        show:{opacity:1, y:0, transition:{duration:0.8, delay:0.5 , ease:[0.5, 0, 0.24, 1]}},
+    }
+
+    const textVariant ={
+        init:{opacity:0, y:80},
+        hide:{opacity:1, y: 0, transition:{duration:0.8, delay:0.5 , ease:[0.5, 0, 0.24, 1]}},
+        show:{opacity:0, y:80, transition:{duration:0.8, ease:[0.5, 0, 0.24, 1]}},
+    }
+
+
+    const hoverProject = (event:any) => {
+        if(event.currentTarget.dataset.string == "mazy"){
+            mazyControls.start("hide");
+        }else{
+            dobbyControls.start("hide");
+        }
+        ;
+    }
+
+    const unhoverProject = (event:any) => {
+        if(event.currentTarget.dataset.string == "mazy"){
+            mazyControls.start("show");
+        }else{
+            dobbyControls.start("show");
+        }
+        ;
+    }
+
     return (
-        <div className="bg-[#1c1d20] flex flex-col items-center h-[3000px] overflow-y-scroll overflow-x-hidden">
-            <motion.div 
-            style={{y:TextY, opacity:TextOpa}}
-            className="z-10 mt-10 px-[7%] flex flex-row py-2  items-end w-full h-20 border-0 border-blue-400">
-                <motion.div className="z-10"
-                    variants={{
-                        init: {
-                            scale: 1000,
-                        },
-                        anim: {
-                            scale: [1000,500, 375, 190, 90, 45, 25, 13, 6, 1.5],
-                            transition: {
-                                duration: 0.5
-                                , type: "keyframes"
-                            }
-                        },
-                    }}
-                    initial="init"
-                    animate="anim">
-                    <Image src={star} alt="" width={24} height={24} >
-                    </Image></motion.div>
-                <div className="mx-4 basis-1/2 text-[#ffffff] text-xl border-0 border-red-400">Pada Paradise</div>
-                <div className="text-white border-0 border-red-400 w-full flex flex-row-reverse space-x-6 space-x-reverse text-lg cardo-regular">
-                    <button className="hover:underline decoration-1 underline-offset-2 opacity-[70%] hover:opacity-[100%]" onClick={() => router.push("/blogs")}>Home</button>
-                    <button className="hover:underline decoration-1 underline-offset-2 opacity-[70%] hover:opacity-[100%]" onClick={() => router.push("/art")}>Art</button>
-                </div>
-            </motion.div>
-            <motion.div style={{y:bodyY}} className="mt-4 h-[10rem] w-full flex justify-center overflow-hidden">
+        <div className="bg-[#1c1d20] flex flex-col items-center h-screen overflow-y-hidden overflow-x-hidden">
+            <Header />
+            <motion.div style={{ y: bodyY }} className="mt-[-30px] h-[10rem] w-full flex justify-center overflow-hidden">
                 <div className="shrink-0 mt-10 bg-white h-[700px] w-[300%] rounded-t-[50%]" />
             </motion.div>
-            <div className="bg-white h-full w-full"></div>
+            <div className="flex flex-col bg-white h-full w-full">
+                <div className="mt-6 px-40 flex felx-row w-full h-[40px]">
+                    <div className="flex-1">
+                        <button data-string="mazy" onClick={()=>router.push("https://scratch.mit.edu/projects/892089890")} onMouseOut={(event)=>unhoverProject(event)} onMouseOver={(event)=>hoverProject(event)} className="grad cardo-bold h-10 text-center text-xl w-full border-b-2 border-[#1c1d20] text-[#1c1d20] hover:text-[#2aa084]">Mazy Lost in the Maze</button>
+                        <motion.div className="px-2" initial="init" animate={mazyControls} variants={pictureVariant}>
+                            <div className="mt-4 relative bg-black w-full h-[300px] overflow-hidden object-top">
+                                <Image src={mazy} alt="" fill style={
+                                    {
+                                        scale: 1,
+                                        objectFit: "cover"
+                                    }
+                                } className=""></Image>
+                            </div>
+                        </motion.div>
+                        <motion.div variants={textVariant} animate={mazyControls} initial="init" className="relative top-[-300px] w-[100%] px-[5%] text-justify text-lg cardo-regular">
+                            Mazy is a game that you have to avoid attack from boss and collect gems in a maze to win.
+                            Inspired by Undertale's battle system and add some challenges in gameplay and self programing skill with random generate maze.
+                            It is a scratch game project for my university Basic Computer Engineering course.
+                        </motion.div>
+                    </div>
+                    <div className="flex-1">
+                        <button data-string="dobby" onClick={()=>router.push("https://github.com/archiash/eq-manager")} onMouseOut={(event)=>unhoverProject(event)} onMouseOver={(event)=>hoverProject(event)} className="grad cardo-bold h-10 text-center text-xl w-full border-b-2 border-[#1c1d20] text-[#1c1d20] hover:text-[#2aa084]">Dobby "Reparo" Equation Manager</button>
+                        <motion.div className="px-2" initial="init" animate={dobbyControls} variants={pictureVariant}>
+                            <div className="mt-4 relative bg-black w-full h-[300px] overflow-hidden object-top">
+                                <Image src={dobby} alt="" fill style={
+                                    {
+                                        scale: 1,
+                                        objectFit: "cover"
+                                    }
+                                } className=""></Image>
+                            </div>
+                        </motion.div>
+                        <motion.div variants={textVariant} animate={dobbyControls} initial="init" className="relative top-[-300px] w-[100%] px-[5%] text-justify text-lg cardo-regular">
+                            My "Reparo" version of Dobby Equation Manager of my team's project for computer programing course.
+                            It is design to save equation from user and call it to calculate.
+                            Aim to remake ui from quite cartoony into my personal taste simple black and white one.
+                        </motion.div>
+
+                    </div>
+                </div>
+
+            </div>
 
         </div>
 

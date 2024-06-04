@@ -41,6 +41,10 @@ body {
   width: 0px;
 }
 
+.grad:hover {
+  border-image: linear-gradient(45deg, #1c1d20 0, #2aa084 30% 70%, #1c1d20 100%) 1;
+  }
+
 .cardo-regular {
   font-family: "Cardo", serif;
   font-weight: 400;
