@@ -33,12 +33,12 @@ export default function Pages() {
     const pictureVariant ={
         init:{opacity:1, y:0},
         hide:{opacity:0, y: 80, transition:{duration:0.8, ease:[0.5, 0, 0.24, 1]}},
-        show:{opacity:1, y:0, transition:{duration:0.8, delay:0.5 , ease:[0.5, 0, 0.24, 1]}},
+        show:{opacity:1, y:0, transition:{duration:0.8, delay:0.2 , ease:[0.5, 0, 0.24, 1]}},
     }
 
     const textVariant ={
         init:{opacity:0, y:80},
-        hide:{opacity:1, y: 0, transition:{duration:0.8, delay:0.5 , ease:[0.5, 0, 0.24, 1]}},
+        hide:{opacity:1, y: 0, transition:{duration:0.8, delay:0.2 , ease:[0.5, 0, 0.24, 1]}},
         show:{opacity:0, y:80, transition:{duration:0.8, ease:[0.5, 0, 0.24, 1]}},
     }
 
@@ -69,8 +69,8 @@ export default function Pages() {
             </motion.div>
             <div className="flex flex-col bg-white h-full w-full">
                 <div className="mt-6 px-40 flex felx-row w-full h-[40px]">
-                    <div className="flex-1">
-                        <button data-string="mazy" onClick={()=>router.push("https://scratch.mit.edu/projects/892089890")} onMouseOut={(event)=>unhoverProject(event)} onMouseOver={(event)=>hoverProject(event)} className="grad cardo-bold h-10 text-center text-xl w-full border-b-2 border-[#1c1d20] text-[#1c1d20] hover:text-[#2aa084]">Mazy Lost in the Maze</button>
+                    <button data-string="mazy" onClick={()=>router.push("https://scratch.mit.edu/projects/892089890")} onMouseLeave={(event)=>unhoverProject(event)} onMouseEnter={(event)=>hoverProject(event)} className="flex-1 group">
+                        <button  className="grad cardo-bold h-10 text-center text-xl w-full border-b-2 border-[#1c1d20] text-[#1c1d20] group-hover:text-[#2aa084]">Mazy Lost in the Maze</button>
                         <motion.div className="px-2" initial="init" animate={mazyControls} variants={pictureVariant}>
                             <div className="mt-4 relative bg-black w-full h-[300px] overflow-hidden object-top">
                                 <Image src={mazy} alt="" fill style={
@@ -86,9 +86,9 @@ export default function Pages() {
                             Inspired by Undertale's battle system and add some challenges in gameplay and self programing skill with random generate maze.
                             It is a scratch game project for my university Basic Computer Engineering course.
                         </motion.div>
-                    </div>
-                    <div className="flex-1">
-                        <button data-string="dobby" onClick={()=>router.push("https://github.com/archiash/eq-manager")} onMouseOut={(event)=>unhoverProject(event)} onMouseOver={(event)=>hoverProject(event)} className="grad cardo-bold h-10 text-center text-xl w-full border-b-2 border-[#1c1d20] text-[#1c1d20] hover:text-[#2aa084]">Dobby "Reparo" Equation Manager</button>
+                    </button>
+                    <button data-string="dobby" onClick={()=>router.push("https://github.com/archiash/eq-manager")} onMouseLeave={(event)=>unhoverProject(event)} onMouseEnter={(event)=>hoverProject(event)} className="flex-1 group">
+                        <button  className="grad cardo-bold h-10 text-center text-xl w-full border-b-2 border-[#1c1d20] text-[#1c1d20] group-hover:text-[#2aa084]">Dobby "Reparo" Equation Manager</button>
                         <motion.div className="px-2" initial="init" animate={dobbyControls} variants={pictureVariant}>
                             <div className="mt-4 relative bg-black w-full h-[300px] overflow-hidden object-top">
                                 <Image src={dobby} alt="" fill style={
@@ -105,7 +105,7 @@ export default function Pages() {
                             Aim to remake ui from quite cartoony into my personal taste simple black and white one.
                         </motion.div>
 
-                    </div>
+                    </button>
                 </div>
 
             </div>
