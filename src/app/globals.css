@@ -35,6 +35,7 @@ body {
 * {
   scrollbar-width: none;
   scrollbar-color: var(--secondary) var(--primary);
+
 }
 
 *::-webkit-scrollbar {

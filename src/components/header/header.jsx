@@ -39,7 +39,7 @@ export default function Header() {
                 <Image src={star} alt="" width={24} height={24} >
                 </Image></motion.div>
             <div className="mx-4 basis-1/2 text-[#ffffff] text-xl border-0 border-red-400">Pada Paradise</div>
-            <div className="text-white border-0 border-red-400 w-full flex flex-row-reverse space-x-6 space-x-reverse text-lg cardo-regular">
+            <div className="text-white border-0 border-red-400 w-full flex flex-row-reverse space-x-10 space-x-reverse text-lg cardo-regular">
                 <button className="hover:underline decoration-1 underline-offset-2 opacity-[70%] hover:opacity-[100%]" onClick={() => router.push("/blogs")}>Home</button>
                 <button className="hover:underline decoration-1 underline-offset-2 opacity-[70%] hover:opacity-[100%]" onClick={() => router.push("/art")}>Art</button>
             </div>
