@@ -4,8 +4,8 @@ import { useEffect } from "react"
 
 export default function() {
 
-    const router = useRouter()
     useEffect(() => {
+        const router = useRouter()
         router.push("https://www.figma.com/deck/RCpi04ziViEq5FHV5cGpzJ/Eigengrau?node-id=1-237&t=tsuSAQNUl1t5oUYw-1")
     }, [])
 
