@@ -4,9 +4,9 @@ import { useEffect } from "react"
 
 export default function Page() {
 
+    const router = useRouter()
     useEffect(() => {
         window.location.href = "https://www.figma.com/deck/RCpi04ziViEq5FHV5cGpzJ/Eigengrau?node-id=1-237&t=tsuSAQNUl1t5oUYw-1";
-        const router = useRouter()
         router.push("https://www.figma.com/deck/RCpi04ziViEq5FHV5cGpzJ/Eigengrau?node-id=1-237&t=tsuSAQNUl1t5oUYw-1")
     }, [])
 
