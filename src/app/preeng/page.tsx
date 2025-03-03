@@ -5,8 +5,7 @@ import { useEffect } from "react"
 export default function() {
 
     useEffect(() => {
-        const router = useRouter()
-        router.push("https://www.figma.com/deck/RCpi04ziViEq5FHV5cGpzJ/Eigengrau?node-id=1-237&t=tsuSAQNUl1t5oUYw-1")
+        window.location.href = "https://www.figma.com/deck/RCpi04ziViEq5FHV5cGpzJ/Eigengrau?node-id=1-237&t=tsuSAQNUl1t5oUYw-1";
     }, [])
 
     return (
